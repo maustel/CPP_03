@@ -11,28 +11,35 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
+/*
+Derived class ScavTrap inherits all attributes from base class ClapTrap
+except:
+    its constructors and its destructor
+    its assignment operator members (operator=)
+    its friends
+    its private members
+But constructors and destructor will be automativally called by derived class constructors and destructor
+If I want another behaviour in an inherited function, i can just declare the
+function again in my derived class with the same name, implementing another behaviour (like attack)
+
+*/
 int main ()
 {
-	ClapTrap Trap(std::string ("Amsel"));
-	Trap.attack("Meise");
-	Trap.takeDamage(11);
-	Trap.takeDamage(11);
-	Trap.beRepaired(9);
-	Trap.attack("Meise");
-	Trap.takeDamage(11);
-	Trap.attack("Meise");
-	Trap.attack("Meise");
-	Trap.attack("Meise");
-	Trap.takeDamage(11);
-	Trap.attack("Meise");
-	Trap.attack("Meise");
-	Trap.attack("Meise");
-	Trap.beRepaired(10);
-	Trap.attack("Meise");
-	Trap.attack("Meise");
-	Trap.attack("Meise");
-	Trap.beRepaired(1);
+	ClapTrap Clap(std::string ("Amsel"));
+	ClapTrap ClapCpy(Clap);
+
+	ScavTrap Sca;
+	Sca = ScavTrap("Spatz");
+
+	ScavTrap Scav(std::string ("Specht"));
+	Scav.attack("Eagle");
+	ScavTrap ScavCpy(Scav);
+	ScavCpy.beRepaired(10);
+	ScavCpy.takeDamage(33);
+	ScavCpy.attack("Meise");
+	Sca.guardGate();
 
 	return (0);
 }
