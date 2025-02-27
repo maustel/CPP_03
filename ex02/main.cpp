@@ -14,8 +14,6 @@
 #include "ScavTrap.hpp"
 
 /*
-parent = base class
-child = derived class
 Derived class ScavTrap inherits all attributes from base class ClapTrap
 except:
     its constructors and its destructor
@@ -25,9 +23,7 @@ except:
 But constructors and destructor will be automativally called by derived class constructors and destructor
 If I want another behaviour in an inherited function, i can just declare the
 function again in my derived class with the same name, implementing another behaviour (like attack)
-The base class manages shared state that the derived class relies on
-This state must be properly initialized before the derived class can modify it
-It must be destructed after the derived class has been destructed
+
 */
 int main ()
 {
