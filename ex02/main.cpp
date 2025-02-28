@@ -12,6 +12,7 @@
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 /*
 Derived class ScavTrap inherits all attributes from base class ClapTrap
@@ -27,19 +28,16 @@ function again in my derived class with the same name, implementing another beha
 */
 int main ()
 {
-	ClapTrap Clap(std::string ("Amsel"));
-	ClapTrap ClapCpy(Clap);
+	// ClapTrap Clap(std::string ("Clap"));
+	// ScavTrap Scav(std::string ("Scav"));
+	FragTrap Frag(std::string ("Frag"));
 
-	ScavTrap Sca;
-	Sca = ScavTrap("Spatz");
-
-	ScavTrap Scav(std::string ("Specht"));
-	Scav.attack("Eagle");
-	ScavTrap ScavCpy(Scav);
-	ScavCpy.beRepaired(10);
-	ScavCpy.takeDamage(33);
-	ScavCpy.attack("Meise");
-	Sca.guardGate();
+	// Clap.attack("Sparrow");
+	// Scav.attack("Finch");
+	Frag.attack("Robin");
+	Frag.beRepaired(10);
+	Frag.takeDamage(20);
+	Frag.highFivesGuys();
 
 	return (0);
 }
