@@ -32,18 +32,25 @@ It must be destructed after the derived class has been destructed
 int main ()
 {
 	ClapTrap Clap(std::string ("Amsel"));
-	ClapTrap ClapCpy(Clap);
+	std::cout << std::endl;
 
-	ScavTrap Sca;
-	Sca = ScavTrap("Spatz");
+	ClapTrap ClapCpy(Clap);
+	std::cout << std::endl;
 
 	ScavTrap Scav(std::string ("Specht"));
 	Scav.attack("Eagle");
-	ScavTrap ScavCpy(Scav);
+	std::cout << std::endl;
+
+	ScavTrap ScavCpy(Scav);	//copies Specht
+	std::cout << std::endl;
+
 	ScavCpy.beRepaired(10);
 	ScavCpy.takeDamage(33);
 	ScavCpy.attack("Meise");
-	Sca.guardGate();
+	std::cout << std::endl;
+
+	Scav.guardGate();
+	std::cout << std::endl;
 
 	return (0);
 }

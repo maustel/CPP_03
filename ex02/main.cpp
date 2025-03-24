@@ -28,16 +28,20 @@ function again in my derived class with the same name, implementing another beha
 */
 int main ()
 {
-	// ClapTrap Clap(std::string ("Clap"));
-	// ScavTrap Scav(std::string ("Scav"));
+	ClapTrap Clap(std::string ("Clap"));
+	ScavTrap Scav(std::string ("Scav"));
 	FragTrap Frag(std::string ("Frag"));
+	std::cout << std::endl;
 
-	// Clap.attack("Sparrow");
-	// Scav.attack("Finch");
+	Clap.attack("Sparrow");
+	Scav.attack("Finch");
 	Frag.attack("Robin");
+	std::cout << std::endl;
+
 	Frag.beRepaired(10);
 	Frag.takeDamage(20);
 	Frag.highFivesGuys();
+	std::cout << std::endl;
 
 	return (0);
 }
